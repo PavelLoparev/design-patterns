@@ -1,11 +1,11 @@
 <?php
 
-require_once('ducks/MallardDuck.php');
-require_once('ducks/RubberDuck.php');
-require_once('behaviors/FlyWithWings.php');
-require_once('behaviors/FlyNoWay.php');
-require_once('behaviors/QuackQuack.php');
-require_once('behaviors/QuackSqueak.php');
+require_once('Ducks/MallardDuck.php');
+require_once('Ducks/RubberDuck.php');
+require_once('Behaviors/FlyWithWings.php');
+require_once('Behaviors/FlyNoWay.php');
+require_once('Behaviors/QuackQuack.php');
+require_once('Behaviors/QuackSqueak.php');
 
 $mallardDuck = new MallardDuck();
 $mallardDuck->display();
