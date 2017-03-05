@@ -8,7 +8,7 @@
 namespace Patterns\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Patterns\Iterator\PhpArrayIterator;
+use Patterns\Iterator\PhpIndexedArrayIterator;
 
 
 /**
@@ -22,7 +22,7 @@ class IteratorTest extends TestCase {
    * Check current element in empty array.
    */
   public function testCurrentElementOnEmptyArray() {
-    $iterator = new PhpArrayIterator([]);
+    $iterator = new PhpIndexedArrayIterator([]);
     $this->assertNull($iterator->current(), 'There is no current element in an array.');
   }
 
@@ -30,7 +30,7 @@ class IteratorTest extends TestCase {
    * Check current element.
    */
   public function testCurrentElement() {
-    $iterator = new PhpArrayIterator([
+    $iterator = new PhpIndexedArrayIterator([
       'Test 1',
       'Test 2',
     ]);
@@ -43,7 +43,7 @@ class IteratorTest extends TestCase {
    * Check next element in empty array.
    */
   public function testNextElementOnEmptyArray() {
-    $iterator = new PhpArrayIterator([]);
+    $iterator = new PhpIndexedArrayIterator([]);
     $this->assertNull($iterator->next(), 'There are no more elements in an array.');
   }
 
@@ -51,7 +51,7 @@ class IteratorTest extends TestCase {
    * Check next element.
    */
   public function testNextElementArray() {
-    $iterator = new PhpArrayIterator([
+    $iterator = new PhpIndexedArrayIterator([
       'Test 1',
       'Test 2',
     ]);

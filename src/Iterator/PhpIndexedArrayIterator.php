@@ -3,11 +3,11 @@
 namespace Patterns\Iterator;
 
 /**
- * Class PhpArrayIterator.
+ * Class PhpIndexedArrayIterator.
  *
  * @package Patterns\Iterator
  */
-class PhpArrayIterator implements IteratorInterface {
+class PhpIndexedArrayIterator implements IteratorInterface {
 
   /**
    * Iterator position.
@@ -21,7 +21,7 @@ class PhpArrayIterator implements IteratorInterface {
    *
    * @var array
    */
-  private $array;
+  private $array = [];
 
   /**
    * PhpArrayIterator constructor.
@@ -42,12 +42,11 @@ class PhpArrayIterator implements IteratorInterface {
    * @return mixed
    */
   public function next() {
-    $this->position++;
-    return isset($this->array[$this->position]) ? $this->array[$this->position] : null;
+    return isset($this->array[$this->position + 1]) ? $this->array[++$this->position] : null;
   }
 
   /**
-   * Checks if next element exist.
+   * Checks if next element exists.
    *
    * @return bool
    */
