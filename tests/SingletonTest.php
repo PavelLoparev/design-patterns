@@ -10,13 +10,24 @@ namespace Patterns\Tests;
 use PHPUnit\Framework\TestCase;
 use Patterns\Singleton\Singleton;
 
+
 /**
- * SingletonTest class.
+ * Class SingletonTest.
+ *
+ * @package Patterns\Tests
  */
 class SingletonTest extends TestCase {
 
+  /**
+   * Class reflection object.
+   *
+   * @var \ReflectionClass
+   */
   private $reflection;
 
+  /**
+   * Test fixture.
+   */
   public function setUp() {
     $this->reflection = new \ReflectionClass('Patterns\Singleton\Singleton');
   }

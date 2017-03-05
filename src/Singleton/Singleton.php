@@ -8,10 +8,17 @@
 namespace Patterns\Singleton;
 
 /**
- * Class Singleton
+ * Class Singleton.
+ *
  * @package Patterns\Singleton
  */
 class Singleton {
+
+  /**
+   * Singleton instance.
+   *
+   * @var null
+   */
   private static $instance = null;
 
   /**
@@ -36,4 +43,5 @@ class Singleton {
    * Object of Singleton class can not be cloned.
    */
   private function __clone() {}
+
 }
