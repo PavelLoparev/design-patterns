@@ -10,7 +10,6 @@ namespace Patterns\Tests;
 use PHPUnit\Framework\TestCase;
 use Patterns\TemplateMethod\Coffee;
 
-
 /**
  * Class TemplateMethodTest.
  *
