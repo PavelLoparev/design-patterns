@@ -14,16 +14,13 @@ namespace Patterns\TemplateMethod;
  */
 abstract class BaseBeverage {
 
-
   /**
-   * String to be tested.
-   *
    * @var string
    */
   protected $state = '';
 
   /**
-   * Template method.
+   * @return string
    */
   final public function makeBeverage() {
     $this->boilWater();
@@ -35,29 +32,25 @@ abstract class BaseBeverage {
   }
 
   /**
-   * You can't override this method.
+   * Final method.
    */
   final public function boilWater() {
     $this->state .= 'Boiling water.';
   }
 
   /**
-   * You can't override this method.
+   * Final method.
    */
   final public function putIntoCup() {
     $this->state .= 'Putting into cup.';
   }
 
   /**
-   * Method to be overridden.
-   *
    * @return mixed
    */
   abstract public function brew();
 
   /**
-   * Method to be overridden.
-   *
    * @return mixed
    */
   abstract public function addCondiments();

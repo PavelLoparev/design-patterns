@@ -2,7 +2,7 @@
 
 /**
  * @file
- * TemplateMethod tests.
+ * TemplateMethodTest.php.
  */
 
 namespace Patterns\Tests;

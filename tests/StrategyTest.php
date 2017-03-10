@@ -20,6 +20,9 @@ use Patterns\Strategy\Behavior\QuackSqueak;
  */
 class StrategyTest extends TestCase {
 
+  /**
+   * Test different quack strategies.
+   */
   public function testDuckBehavior() {
     $duck = new Duck(new QuackQuack());
     $this->assertEquals('Quack-quack!', $duck->performQuack());

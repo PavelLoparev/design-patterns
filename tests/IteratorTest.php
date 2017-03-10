@@ -2,14 +2,13 @@
 
 /**
  * @file
- * Iterator tests.
+ * IteratorTest.php.
  */
 
 namespace Patterns\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Patterns\Iterator\PhpIndexedArrayIterator;
-
 
 /**
  * Class IteratorTest.

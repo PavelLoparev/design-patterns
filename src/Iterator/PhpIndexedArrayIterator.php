@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * PhpIndexedArrayIterator.php.
+ */
+
 namespace Patterns\Iterator;
 
 /**
@@ -10,35 +15,30 @@ namespace Patterns\Iterator;
 class PhpIndexedArrayIterator implements IteratorInterface {
 
   /**
-   * Iterator position.
-   *
    * @var int
    */
   private $position = 0;
 
   /**
-   * Array to iterate through.
-   *
    * @var array
    */
   private $array = [];
 
   /**
-   * PhpArrayIterator constructor.
-   *
    * @param array $array
    */
   public function __construct(array $array) {
     $this->array = array_values($array);
   }
 
+  /**
+   * @return mixed
+   */
   public function current() {
     return isset($this->array[$this->position]) ? $this->array[$this->position] : null;
   }
 
   /**
-   * Returns next array element or false.
-   *
    * @return mixed
    */
   public function next() {
@@ -46,8 +46,6 @@ class PhpIndexedArrayIterator implements IteratorInterface {
   }
 
   /**
-   * Checks if next element exists.
-   *
    * @return bool
    */
   public function hasNext() {

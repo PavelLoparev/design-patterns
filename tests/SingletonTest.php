@@ -2,14 +2,13 @@
 
 /**
  * @file
- * Singleton tests.
+ * SingletonTest.php.
  */
 
 namespace Patterns\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Patterns\Singleton\Singleton;
-
 
 /**
  * Class SingletonTest.
@@ -19,14 +18,14 @@ use Patterns\Singleton\Singleton;
 class SingletonTest extends TestCase {
 
   /**
-   * Class reflection object.
-   *
    * @var \ReflectionClass
    */
   private $reflection;
 
   /**
    * Test fixture.
+   *
+   * Get singleton reflection object.
    */
   public function setUp() {
     $this->reflection = new \ReflectionClass('Patterns\Singleton\Singleton');

@@ -15,8 +15,6 @@ namespace Patterns\Singleton;
 class Singleton {
 
   /**
-   * Singleton instance.
-   *
    * @var null
    */
   private static $instance = null;
@@ -27,8 +25,6 @@ class Singleton {
   private function __construct() {}
 
   /**
-   * Creates instance ob itself or returns existing one.
-   *
    * @return null|\Patterns\Singleton\Singleton
    */
   public static function getInstance() {
@@ -40,7 +36,7 @@ class Singleton {
   }
 
   /**
-   * Object of Singleton class can not be cloned.
+   * Singleton magic clone method.
    */
   private function __clone() {}
 

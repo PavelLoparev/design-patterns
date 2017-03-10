@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * IteratorInterface.php.
+ */
+
 namespace Patterns\Iterator;
 
 /**

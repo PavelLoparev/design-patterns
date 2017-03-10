@@ -15,8 +15,6 @@ namespace Patterns\Strategy\Behavior;
 class QuackSqueak implements QuackInterface {
 
   /**
-   * Returns 'quack' string.
-   *
    * @return string
    */
   public function quack() {

@@ -15,8 +15,6 @@ namespace Patterns\Strategy\Behavior;
 interface QuackInterface {
 
   /**
-   * Quack method to be implemented.
-   *
    * @return mixed
    */
   public function quack();
