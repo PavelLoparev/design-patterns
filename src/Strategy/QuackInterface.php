@@ -5,7 +5,7 @@
  * QuackInterface.php.
  */
 
-namespace Patterns\Strategy\Behavior;
+namespace Patterns\Strategy;
 
 /**
  * Interface QuackInterface.

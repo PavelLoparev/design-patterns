@@ -9,8 +9,8 @@ namespace Patterns\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Patterns\Strategy\Duck;
-use Patterns\Strategy\Behavior\QuackQuack;
-use Patterns\Strategy\Behavior\QuackSqueak;
+use Patterns\Strategy\Behaviors\QuackQuack;
+use Patterns\Strategy\Behaviors\QuackSqueak;
 
 
 /**

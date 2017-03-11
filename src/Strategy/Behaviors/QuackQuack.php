@@ -5,7 +5,9 @@
  * QuackQuack.php.
  */
 
-namespace Patterns\Strategy\Behavior;
+namespace Patterns\Strategy\Behaviors;
+
+use Patterns\Strategy\QuackInterface;
 
 /**
  * Class QuackQuack.
