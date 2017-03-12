@@ -22,11 +22,11 @@ class ObserverTest extends TestCase {
    * Check observer notifications.
    */
   public function testObserver() {
-    $mock_listener_1 = $this->getMockBuilder(Listener::class)
+    $mock_listener_1 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
-    $mock_listener_2 = $this->getMockBuilder(Listener::class)
+    $mock_listener_2 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
