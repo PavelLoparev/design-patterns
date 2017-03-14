@@ -48,11 +48,11 @@ class ObserverTest extends TestCase {
    * Check observer remove listener method.
    */
   public function testObserverRemoveListenersMethod() {
-    $mock_listener_1 = $this->getMockBuilder(Listener::class)
+    $mock_listener_1 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
-    $mock_listener_2 = $this->getMockBuilder(Listener::class)
+    $mock_listener_2 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
