@@ -23,6 +23,7 @@ class IteratorTest extends TestCase {
   public function testCurrentElementOnEmptyArray() {
     $iterator = new PhpIndexedArrayIterator([]);
     $this->assertNull($iterator->current(), 'There is no current element in an array.');
+    $this->assertFalse($iterator->hasNext(), 'There is no next element in an array.');
   }
 
   /**

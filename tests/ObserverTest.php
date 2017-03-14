@@ -8,7 +8,6 @@
 namespace Patterns\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Patterns\Observer\Listener\Listener;
 use Patterns\Observer\Subject\Subject;
 
 /**
@@ -22,25 +21,25 @@ class ObserverTest extends TestCase {
    * Check observer notifications.
    */
   public function testObserver() {
-    $mock_listener_1 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
+    $mockListener1 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
-    $mock_listener_2 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
+    $mockListener2 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
-    $mock_listener_1->expects($this->once())
+    $mockListener1->expects($this->once())
       ->method('update')
       ->with($this->equalTo('Test data'));
 
-    $mock_listener_2->expects($this->once())
+    $mockListener2->expects($this->once())
       ->method('update')
       ->with($this->equalTo('Test data'));
 
     $subject = new Subject('Test data');
-    $subject->addListener('listener_1', $mock_listener_1);
-    $subject->addListener('listener_2', $mock_listener_2);
+    $subject->addListener('listener_1', $mockListener1);
+    $subject->addListener('listener_2', $mockListener2);
     $subject->notify('Test data');
   }
 
@@ -48,24 +47,24 @@ class ObserverTest extends TestCase {
    * Check observer remove listener method.
    */
   public function testObserverRemoveListenersMethod() {
-    $mock_listener_1 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
+    $mockListener1 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
-    $mock_listener_2 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
+    $mockListener2 = $this->getMockBuilder('Patterns\Observer\Listener\Listener')
       ->setMethods(['update'])
       ->getMock();
 
-    $mock_listener_1->expects($this->once())
+    $mockListener1->expects($this->once())
       ->method('update')
       ->with($this->equalTo('Test data'));
 
-    $mock_listener_2->expects($this->never())
+    $mockListener2->expects($this->never())
       ->method('update');
 
     $subject = new Subject('Test data');
-    $subject->addListener('listener_1', $mock_listener_1);
-    $subject->addListener('listener_2', $mock_listener_2);
+    $subject->addListener('listener_1', $mockListener1);
+    $subject->addListener('listener_2', $mockListener2);
     $subject->removeListener('listener_2');
     $subject->notify('Test data');
   }

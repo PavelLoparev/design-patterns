@@ -60,6 +60,7 @@ class CinemaFacade {
     $this->lightSystem->setLight(10);
     $this->soundSystem->on();
     $this->soundSystem->setVolume(50);
+    $this->moviePlayer->on();
     $this->moviePlayer->playMovie($movie);
   }
 

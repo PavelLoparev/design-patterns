@@ -31,6 +31,7 @@ class FacadeTest extends TestCase {
     $this->assertEquals($cinema->getLightSystem()->getLight(), 10);
     $this->assertEquals($cinema->getSoundSystem()->getState(), 1);
     $this->assertEquals($cinema->getSoundSystem()->getVolume(), 50);
+    $this->assertEquals($cinema->getMoviePlayer()->getState(), 1);
     $this->assertEquals($cinema->getMoviePlayer()->getCurrentMovie(), 'No country for old man');
   }
 
@@ -45,6 +46,7 @@ class FacadeTest extends TestCase {
     $this->assertEquals($cinema->getLightSystem()->getLight(), 100);
     $this->assertEquals($cinema->getSoundSystem()->getVolume(), 0);
     $this->assertEquals($cinema->getSoundSystem()->getState(), 0);
+    $this->assertEquals($cinema->getMoviePlayer()->getState(), 0);
     $this->assertEquals($cinema->getMoviePlayer()->getCurrentMovie(), 'No country for old man');
   }
 
