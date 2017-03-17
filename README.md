@@ -24,6 +24,7 @@ Repository contains a list of design patterns implemented in php. All examples w
 
 # Tests
 `$ composer install`
+
 `$ ./vendor/bin/phpunit`
 
 # License
