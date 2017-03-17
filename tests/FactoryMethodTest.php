@@ -23,10 +23,11 @@ class FactoryMethodTest extends TestCase {
    */
   public function testFactoryMethod() {
     $nyStyleStore = new NYStylePizzaStore();
-    $noStyleStore = new NOStylePizzaStore();
     $this->assertEquals('New York style CheesePizza', $nyStyleStore->orderPizza('cheese')->getType());
-    $this->assertEquals('New Orleans style CheesePizza', $noStyleStore->orderPizza('cheese')->getType());
     $this->assertEquals('New York style PepperoniPizza', $nyStyleStore->orderPizza('pepperoni')->getType());
+
+    $noStyleStore = new NOStylePizzaStore();
+    $this->assertEquals('New Orleans style CheesePizza', $noStyleStore->orderPizza('cheese')->getType());
     $this->assertEquals('New Orleans style PepperoniPizza', $noStyleStore->orderPizza('pepperoni')->getType());
   }
 
