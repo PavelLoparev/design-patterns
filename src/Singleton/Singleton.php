@@ -15,7 +15,7 @@ namespace Patterns\Singleton;
 class Singleton {
 
   /**
-   * @var null
+   * @var mixed
    */
   private static $instance = null;
 

@@ -12,7 +12,7 @@ namespace Patterns\Observer\Listener;
  *
  * @package Patterns\Observer
  */
-class Listener implements ListenerInterface{
+class Listener implements ListenerInterface {
 
   /**
    * @param $data
