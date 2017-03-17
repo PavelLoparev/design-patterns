@@ -7,8 +7,8 @@
 
 namespace Patterns\Tests;
 
-use Patterns\Factory\Factory;
 use PHPUnit\Framework\TestCase;
+use Patterns\Factory\Factory;
 
 /**
  * Class FactoryTest.
