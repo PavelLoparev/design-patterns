@@ -20,23 +20,9 @@ class IteratorTest extends TestCase {
   /**
    * Check current element in empty array.
    */
-  public function testCurrentElementOnEmptyArray() {
+  public function testHasNextElementOnEmptyArray() {
     $iterator = new PhpIndexedArrayIterator([]);
-    $this->assertNull($iterator->current(), 'There is no current element in an array.');
     $this->assertFalse($iterator->hasNext(), 'There is no next element in an array.');
-  }
-
-  /**
-   * Check current element.
-   */
-  public function testCurrentElement() {
-    $iterator = new PhpIndexedArrayIterator([
-      'Test 1',
-      'Test 2',
-    ]);
-    $this->assertEquals('Test 1', $iterator->current(), 'Current element is equals "Test 1".');
-    $iterator->next();
-    $this->assertEquals('Test 2', $iterator->current(), 'Current element is equals "Test 2".');
   }
 
   /**
@@ -44,7 +30,7 @@ class IteratorTest extends TestCase {
    */
   public function testNextElementOnEmptyArray() {
     $iterator = new PhpIndexedArrayIterator([]);
-    $this->assertNull($iterator->next(), 'There are no more elements in an array.');
+    $this->assertNull($iterator->next(), 'There is no next element in an array.');
   }
 
   /**
@@ -55,7 +41,9 @@ class IteratorTest extends TestCase {
       'Test 1',
       'Test 2',
     ]);
+    $this->assertEquals('Test 1', $iterator->next(), 'Next element equals "Test 1".');
     $this->assertEquals('Test 2', $iterator->next(), 'Next element equals "Test 2".');
+    $this->assertNull($iterator->next(), 'There is no next element in an array.');
   }
 
 }

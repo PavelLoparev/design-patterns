@@ -17,7 +17,7 @@ class PhpIndexedArrayIterator implements IteratorInterface {
   /**
    * @var int
    */
-  private $position = 0;
+  private $position = -1;
 
   /**
    * @var array
@@ -34,22 +34,15 @@ class PhpIndexedArrayIterator implements IteratorInterface {
   /**
    * @return mixed
    */
-  public function current() {
-    return isset($this->array[$this->position]) ? $this->array[$this->position] : null;
-  }
-
-  /**
-   * @return mixed
-   */
   public function next() {
-    return isset($this->array[$this->position + 1]) ? $this->array[++$this->position] : null;
+    return $this->hasNext() ? $this->array[++$this->position] : null;
   }
 
   /**
    * @return bool
    */
   public function hasNext() {
-    return isset($this->array[$this->position]);
+    return isset($this->array[$this->position + 1]);
   }
 
 }
