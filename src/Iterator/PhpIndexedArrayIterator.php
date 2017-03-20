@@ -34,35 +34,35 @@ class PhpIndexedArrayIterator implements Iterator {
   }
 
   /**
-   * Sets pointer to first element.
+   * @inheritdoc
    */
   public function rewind() {
     $this->position = 0;
   }
 
   /**
-   * @return mixed
+   * @inheritdoc
    */
   public function current() {
     return $this->valid() ? $this->array[$this->position] : NULL;
   }
 
   /**
-   * @return int
+   * @inheritdoc
    */
   public function key() {
     return $this->position;
   }
 
   /**
-   * Shifts
+   * @inheritdoc
    */
   public function next() {
     ++$this->position;
   }
 
   /**
-   * @return bool
+   * @inheritdoc
    */
   public function valid() {
     return isset($this->array[$this->position]);
