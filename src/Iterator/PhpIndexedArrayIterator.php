@@ -7,17 +7,19 @@
 
 namespace Patterns\Iterator;
 
+use Iterator;
+
 /**
  * Class PhpIndexedArrayIterator.
  *
  * @package Patterns\Iterator
  */
-class PhpIndexedArrayIterator implements IteratorInterface {
+class PhpIndexedArrayIterator implements Iterator {
 
   /**
    * @var int
    */
-  private $position = -1;
+  private $position = 0;
 
   /**
    * @var array
@@ -32,17 +34,38 @@ class PhpIndexedArrayIterator implements IteratorInterface {
   }
 
   /**
+   * Sets pointer to first element.
+   */
+  public function rewind() {
+    $this->position = 0;
+  }
+
+  /**
    * @return mixed
    */
+  public function current() {
+    return $this->valid() ? $this->array[$this->position] : NULL;
+  }
+
+  /**
+   * @return int
+   */
+  public function key() {
+    return $this->position;
+  }
+
+  /**
+   * Shifts
+   */
   public function next() {
-    return $this->hasNext() ? $this->array[++$this->position] : null;
+    ++$this->position;
   }
 
   /**
    * @return bool
    */
-  public function hasNext() {
-    return isset($this->array[$this->position + 1]);
+  public function valid() {
+    return isset($this->array[$this->position]);
   }
 
 }

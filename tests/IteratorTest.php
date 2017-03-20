@@ -18,32 +18,59 @@ use Patterns\Iterator\PhpIndexedArrayIterator;
 class IteratorTest extends TestCase {
 
   /**
-   * Check current element in empty array.
+   * Check empty iterator.
    */
-  public function testHasNextElementOnEmptyArray() {
+  public function testEmptyIterator() {
     $iterator = new PhpIndexedArrayIterator([]);
-    $this->assertFalse($iterator->hasNext(), 'There is no next element in an array.');
+    $this->assertNull($iterator->current());
+    $this->assertFalse($iterator->valid());
+    $this->assertEquals(0, $iterator->key());
   }
 
   /**
-   * Check next element in empty array.
+   * Check iterator in while loop.
    */
-  public function testNextElementOnEmptyArray() {
-    $iterator = new PhpIndexedArrayIterator([]);
-    $this->assertNull($iterator->next(), 'There is no next element in an array.');
-  }
-
-  /**
-   * Check next element.
-   */
-  public function testNextElementArray() {
-    $iterator = new PhpIndexedArrayIterator([
+  public function testIteratorInWhileLoop() {
+    $array = [
       'Test 1',
       'Test 2',
-    ]);
-    $this->assertEquals('Test 1', $iterator->next(), 'Next element equals "Test 1".');
-    $this->assertEquals('Test 2', $iterator->next(), 'Next element equals "Test 2".');
-    $this->assertNull($iterator->next(), 'There is no next element in an array.');
+    ];
+    $i = 0;
+    $iterator = new PhpIndexedArrayIterator($array);
+    $iterator->rewind();
+
+    while ($iterator->valid()) {
+      $this->assertEquals($i, $iterator->key());
+      $this->assertEquals($array[$iterator->key()], $iterator->current());
+      $iterator->next();
+      $i++;
+    }
+
+    $this->assertNull($iterator->current());
+    $this->assertEquals(2, $iterator->key());
+    $iterator->rewind();
+    $this->assertEquals(0, $iterator->key());
+  }
+
+  /**
+   * Check iterator in foreach loop.
+   */
+  public function testIteratorInForeachLoop() {
+    $array = [
+      'Test 1',
+      'Test 2',
+    ];
+    $iterator = new PhpIndexedArrayIterator($array);
+
+    foreach ($iterator as $key => $value) {
+      $this->assertEquals($key, $iterator->key());
+      $this->assertEquals($value, $iterator->current());
+    }
+
+    $this->assertNull($iterator->current());
+    $this->assertEquals(2, $iterator->key());
+    $iterator->rewind();
+    $this->assertEquals(0, $iterator->key());
   }
 
 }
